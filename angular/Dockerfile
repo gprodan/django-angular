@@ -26,6 +26,7 @@ FROM nginx:1.18.0-alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy output directory from builder to nginx image.
+
 COPY --from=builder /app/angular-app/dist/out /usr/share/nginx/html
 
 # Copy nginx configuration file.
